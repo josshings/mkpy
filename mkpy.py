@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
+
 import os, sys
 
 def createFile(fname):
     with open(fname + ".py", "w") as pyFile:
-        pyFile.write("#! /usr/bin/env python3\n")
-    
+        pyFile.write("#! /usr/bin/env python3\n") 
     os.system(f"chmod +x {fname}.py")
 
 try:
@@ -13,7 +14,7 @@ except IndexError:
 else:
     if os.path.exists(fname + ".py"):
         ans = input(f"{fname}.py exists, overwrite? [y/n]: ")
-        
+
         if ans == "y":
             os.remove(f"{fname}.py")
             createFile(fname)
